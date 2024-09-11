@@ -99,7 +99,6 @@ function Sidebar({
   setIsSidebarOpen,
   isNonMobile,
 }) {
-  console.log(user);
   const { pathname } = useLocation();
   const [active, setActive] = useState("");
   const navigate = useNavigate();
