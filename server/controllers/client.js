@@ -25,8 +25,9 @@ export const getProducts = async (req, res) => {
 
 export const getCustomers = async (req, res) => {
   try {
-    const customers = User.find({ role: "user" }).select("-password");
-    res.send(200).json(customers);
+    const customers = await User.find({ role: "user" }).select("-password");
+    // console.log(customers, "customers from server");
+    res.status(200).json(customers);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
